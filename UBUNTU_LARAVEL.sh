@@ -12,14 +12,18 @@ sudo apt-get install php7.2-sqlite3 -y
 
 # INSTALL LARAVEL:
 composer create-project laravel/laravel
-cd laravel
+alias laravel="cd laravel"
 
 # INSTALL WORKING NODE PACKAGES:
 rm -rf ~/node_modules
+laravel
 npm install
 
 # CREATE SQLITE DATABASE. CONFIGURE .ENV
-touch  database/databasetestt.sqlite
+touch  database/database.sqlite
+printf '%s\n' ':%s/DB_CONNECTION=mysql/DB_CONNECTION=sqlite/g' 'x'  | sudo ex .env
+printf '%s\n' ':%s/DB_HOST=127.0.0.1/#  DB_HOST=127.0.0.1/g' 'x'  | sudo ex .env
+printf '%s\n' ':%s/DB_PORT=3306/#  DB_PORT=3306/g' 'x'  | sudo ex .env
 printf '%s\n' ':%s/DB_DATABASE=homestead/#  DB_DATABASE=homestead/g' 'x'  | sudo ex .env
 printf '%s\n' ':%s/DB_USERNAME=homestead/#  DB_USERNAME=homestead/g' 'x'  | sudo ex .env
 printf '%s\n' ':%s/DB_PASSWORD=secret/#  DB_PASSWORD=/g' 'x'  | sudo ex .env
@@ -28,5 +32,13 @@ printf '%s\n' ':%s/DB_PASSWORD=secret/#  DB_PASSWORD=/g' 'x'  | sudo ex .env
 php artisan migrate
 php artisan serve --port=8080
 # from the AWS Cloud9 console menu choose Preview --> Preview Running Application
-
+rm -rf ../UBUNTU_LARAVEL.sh
 #Edited by Bretfelean Sorin Cristian
+
+
+
+
+
+
+
+
