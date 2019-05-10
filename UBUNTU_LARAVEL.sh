@@ -16,7 +16,7 @@ alias laravel="cd laravel"
 
 # INSTALL WORKING NODE PACKAGES:
 rm -rf ~/node_modules
-laravel
+.laravel
 npm install
 
 # CREATE SQLITE DATABASE. CONFIGURE .ENV
