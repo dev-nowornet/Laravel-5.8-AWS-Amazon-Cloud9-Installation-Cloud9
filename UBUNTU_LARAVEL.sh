@@ -29,6 +29,7 @@ printf '%s\n' ':%s/DB_DATABASE=homestead/#  DB_DATABASE=homestead/g' 'x'  | sudo
 printf '%s\n' ':%s/DB_USERNAME=homestead/#  DB_USERNAME=homestead/g' 'x'  | sudo ex .env
 printf '%s\n' ':%s/DB_PASSWORD=secret/#  DB_PASSWORD=/g' 'x'  | sudo ex .env
 rm -rf ~/environment/UBUNTU_LARAVEL.sh
+rm -rf ~/environment/README.md
 # LAUNCH LARAVEL:
 php artisan migrate
 php artisan serve --port=8080
