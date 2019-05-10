@@ -33,7 +33,7 @@ printf '%s\n' ':%s/DB_PASSWORD=secret/#  DB_PASSWORD=/g' 'x'  | sudo ex .env
 php artisan migrate
 php artisan serve --port=8080
 # from the AWS Cloud9 console menu choose Preview --> Preview Running Application
-rm -rf ../UBUNTU_LARAVEL.sh
+rm -rf ~/environment/UBUNTU_LARAVEL.sh
 #Edited by Bretfelean Sorin Cristian
 
 
