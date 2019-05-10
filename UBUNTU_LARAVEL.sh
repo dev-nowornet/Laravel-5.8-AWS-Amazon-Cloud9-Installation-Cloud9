@@ -12,7 +12,7 @@ sudo apt-get install php7.2-sqlite3 -y
 
 # INSTALL LARAVEL:
 composer create-project laravel/laravel
-alias laravel="cd laravel"
+alias laravel="cd ~/environment/laravel"
 
 # INSTALL WORKING NODE PACKAGES:
 rm -rf ~/node_modules
